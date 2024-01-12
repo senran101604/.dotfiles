@@ -1,0 +1,9 @@
+set page-padding 1
+set font "Ubuntu Mono Normal 14"
+set default-bg "#15151550"
+set statusbar-bg "#282828"
+set inputbar-bg "#282828"
+
+set recolor
+set recolor-lightcolor "#fbf1c7"
+set recolor-darkcolor "#151515"
