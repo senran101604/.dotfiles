@@ -1,1 +1,5 @@
-/tmux/.config/tmux/plugins/
+tmux/.config/tmux/plugins/
+ulauncher/.config/ulauncher/ext_preferences/
+ulauncher/.config/ulauncher/extensions.json
+ulauncher/.config/ulauncher/settings.json
+ulauncher/.config/ulauncher/shortcuts.json
