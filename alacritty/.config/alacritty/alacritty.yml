@@ -15,9 +15,13 @@ env:
   # `infocmp xterm-256color`.
   # TERM: xterm-256color-italic
 
+# Shell:
+# You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
+# Entries in shell.args are passed unmodified as arguments to the shell.
 shell:
   program: 'bash'
-  # program: 'wsl'
+  # args:
+  #   - --command=tmux
 
 window:
   # Window dimensions (changes require restart)
@@ -66,7 +70,7 @@ window:
   dynamic_title: false
 
   # Background opacity 0 - 1
-  opacity: 1
+  opacity: 0.8
 
 scrolling:
   # maximum number of lines in the scrollback buffer. Specifying '0' will
@@ -130,7 +134,7 @@ draw_bold_text_with_bright_colors: false
 
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
 # and cursor.background colors, otherwise invert the colors of the cursor.
-custom_cursor_colors: true
+custom_cursor_colors: false
 
 schemes:
   ### Catppuccin-Mocha ###
@@ -143,14 +147,6 @@ schemes:
         # Bright and dim foreground colors
         dim_foreground: "#CDD6F4" # text
         bright_foreground: "#CDD6F4" # text
-
-    # Cursor colors
-    cursor:
-        text: "#1E1E2E" # base
-        cursor: "#F5E0DC" # rosewater
-    vi_mode_cursor:
-        text:   "#1E1E2E" # base
-        cursor: "#B4BEFE" # lavender
 
     # Search colors
     search:
@@ -226,14 +222,6 @@ schemes:
         dim_foreground:     "#CAD3F5" # text
         bright_foreground:  "#CAD3F5" # text
 
-    # Cursor colors
-    cursor:
-        text:     "#24273A" # base
-        cursor:   "#F4DBD6" # rosewater
-    vi_mode_cursor:
-        text:     "#24273A" # base
-        cursor:   "#B7BDF8" # lavender
-
     # Search colors
     search:
         matches:
@@ -308,14 +296,6 @@ schemes:
         dim_foreground:     "#C6D0F5" # text
         bright_foreground:  "#C6D0F5" # text
 
-    # Cursor colors
-    cursor:
-        text:     "#303446" # base
-        cursor:   "#F2D5CF" # rosewater
-    vi_mode_cursor:
-        text:     "#303446" # base
-        cursor:   "#BABBF1" # lavender
-
     # Search colors
     search:
         matches:
@@ -385,12 +365,6 @@ schemes:
     primary:
       background: '#282c34'
       foreground: '#bbc2cf'
-    cursor:
-      text: CellBackground
-      cursor: '#528bff'
-    selection:
-      text: CellForeground
-      background: '#3e4451'
     normal:
       black:   '#1c1f24'
       red:     '#ff6c6b'
@@ -415,12 +389,6 @@ schemes:
     primary:
       background: '#282a36'
       foreground: '#f8f8f2'
-    cursor:
-      text: CellBackground
-      cursor: CellForeground
-    vi_mode_cursor:
-      text: CellBackground
-      cursor: CellForeground
     search:
       matches:
         foreground: '#44475a'
@@ -585,11 +553,6 @@ schemes:
       background: '#1b2b34'
       foreground: '#d8dee9'
 
-    # Colors the cursor will use if `custom_cursor_colors` is true
-    cursor:
-      text: '#1b2b34'
-      cursor: '#ffffff'
-
     # Normal colors
     normal:
       black:   '#343d46'
@@ -645,35 +608,30 @@ schemes:
   SolarizedDark: &SolarizedDark
     # Default colors
     primary:
-      background: '#171717' # base03
-      foreground: '#839496' # base0
-
-    # Cursor colors
-    cursor:
-      text:   '#002b36' # base03
-      cursor: '#839496' # base0
+      background: '#171717'
+      foreground: '#839496'
 
     # Normal colors
     normal:
-      black:   '#073642' # base02
-      red:     '#dc322f' # red
-      green:   '#859900' # green
-      yellow:  '#b58900' # yellow
-      blue:    '#268bd2' # blue
-      magenta: '#d33682' # magenta
-      cyan:    '#2aa198' # cyan
-      white:   '#eee8d5' # base2
+      black:   '#073642'
+      red:     '#dc322f'
+      green:   '#859900'
+      yellow:  '#b58900'
+      blue:    '#268bd2'
+      magenta: '#d33682'
+      cyan:    '#2aa198'
+      white:   '#eee8d5'
 
     # Bright colors
     bright:
-      black:   '#002b36' # base03
-      red:     '#cb4b16' # orange
-      green:   '#586e75' # base01
-      yellow:  '#657b83' # base00
-      blue:    '#839496' # base0
-      magenta: '#6c71c4' # violet
-      cyan:    '#93a1a1' # base1
-      white:   '#fdf6e3' # base3
+      black:   '#002b36'
+      red:     '#cb4b16'
+      green:   '#586e75'
+      yellow:  '#657b83'
+      blue:    '#839496'
+      magenta: '#6c71c4'
+      cyan:    '#93a1a1'
+      white:   '#fdf6e3'
 
   ### Solarized Light ###
   SolarizedLight: &SolarizedLight
@@ -681,11 +639,6 @@ schemes:
     primary:
       background: '#fdf6e3' # base3
       foreground: '#657b83' # base00
-
-    # Cursor colors
-    cursor:
-      text:   '#fdf6e3' # base3
-      cursor: '#657b83' # base00
 
     # Normal colors
     normal:
@@ -716,11 +669,6 @@ schemes:
       background: '#1d1f21'
       foreground: '#c5c8c6'
 
-    # Colors the cursor will use if `custom_cursor_colors` is true
-    cursor:
-      text: '#1d1f21'
-      cursor: '#ffffff'
-
     # Normal colors
     normal:
       black:   '#1d1f21'
@@ -747,11 +695,6 @@ schemes:
    primary:
       background: '#151515'
       foreground: '#e8e8d3'
-
-      # Cursor colors
-      cursor:
-        text:   '#ffffff'
-        cursor: '#ffa460'
 
       # Normal colors
       normal:
@@ -781,17 +724,12 @@ schemes:
       background: '#151515'
       foreground: '#eaeaea'
 
-    # Colors the cursor will use if `custom_cursor_colors` is true
-    cursor:
-      text: '#000000'
-      cursor: '#ffffff'
-
     # Normal colors
     normal:
       black:   '#121212'
       red:     '#fa2573'
-      # green:   '0x98e123' # Correct Molokai colour
-      green:   '#9cff00' # Better looking colour
+      # green:   '0x98e123'
+      green:   '#9cff00'
       yellow:  '#dfd460'
       blue:    '#1080d0'
       magenta: '#8700ff'
@@ -1196,18 +1134,19 @@ mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 
 cursor:
-#   # Cursor style
-#   #
-#   # Values for 'style':
-#   #   - ▇ Block
-#   #   - _ Underline
-#   #   - | Beam
-  # style:
-  #   shape: Underline
-  # vi_mode_style:
-  #   shape: Block
-#     blinking: Always
-#   blink_interval: 500
+  # Cursor style
+  #
+  # Values for 'style':
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
+  style:
+    shape: Underline
+    blinking: Always
+  vi_mode_style:
+    shape: Underline
+    blinking: Always
+  blink_interval: 250
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
@@ -1241,14 +1180,5 @@ debug:
 
   # Record all characters and escape sequences as test data.
   # ref_test: false
-
-# Shell
-#
-# You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
-# Entries in shell.args are passed unmodified as arguments to the shell.
-# shell:
-  # program: /usr/local/bin/fish
-  # args:
-  #   - --command=tmux
 
 # vim: nospell
