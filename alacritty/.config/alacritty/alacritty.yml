@@ -1141,12 +1141,12 @@ cursor:
   #   - _ Underline
   #   - | Beam
   style:
-    shape: Underline
+    shape: Block
     blinking: Always
   vi_mode_style:
     shape: Underline
     blinking: Always
-  blink_interval: 250
+  blink_interval: 280
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
